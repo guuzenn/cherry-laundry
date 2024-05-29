@@ -310,19 +310,9 @@
                       </td>
                       <td class="hargaL px-4 py-3 text-sm"> Rp. 18.000 </td>
                       <td class="beratL px-4 py-3 text-sm"> 3 Kg </td>
-                      <td class="statusL px-4 py-3 text-xs">
-                        <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"> Selesai </span>
+                      <td id="statusCell" class="statusL px-4 py-3 text-xs">
+                        <!-- Konten status akan diubah di sini -->
                       </td>
-                      <!-- <td class="statusL px-4 py-3 text-xs"><span
-                          class="px-2 py-1 font-semibold leading-tight text-orange-700 bg-orange-100 rounded-full dark:text-white dark:bg-orange-600"
-                        >
-                          Proses
-                        </span></td> -->
-                      <!-- <td class="statusL px-4 py-3 text-xs"><span
-                          class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700"
-                        >
-                          Belum diambil
-                        </span></td> -->
                       <td class="tanggalL px-4 py-3 text-sm"> 24/04/2024 </td>
                       <td class="bayarL px-4 py-3 text-sm"> 25/04/2024 </td>
                       <td class="px-4 py-3">
@@ -474,60 +464,7 @@
               </div>
             </div>
 
-      <script>
-        //Date Formatter - perlu ga?
-            document.addEventListener('DOMContentLoaded', function() {
-      const modTanggal = document.getElementById('modTanggal');
-      const modBayar = document.getElementById('modBayar');
-
-      function formatDateToDDMMYY(dateString) {
-        const options = { year: '2-digit', month: '2-digit', day: '2-digit' };
-        return new Date(dateString).toLocaleDateString('en-GB', options).replace(/\//g, '/');
-      }
-
-      function validateAndFormatDate(input) {
-        const dateValue = input.value;
-        if (dateValue) {
-          const formattedDate = formatDateToDDMMYY(dateValue);
-          input.value = formattedDate;
-        }
-      }
-
-      modTanggal.addEventListener('blur', () => validateAndFormatDate(modTanggal));
-      modBayar.addEventListener('blur', () => validateAndFormatDate(modBayar));
-    });
-      </script>
-
-			<script>
-				document.addEventListener('DOMContentLoaded', function () {
-					const priceInput = document.getElementById('price');
-				
-					priceInput.addEventListener('input', function () {
-						let value = priceInput.value;
-				
-						// Remove non-digit characters
-						value = value.replace(/\D/g, '');
-				
-						// Parse as integer
-						value = parseInt(value, 10);
-				
-						// If value is a number
-						if (!isNaN(value)) {
-							// Format as Rupiah
-							const formattedValue = new Intl.NumberFormat('id-ID', {
-								style: 'currency',
-								currency: 'IDR',
-								minimumFractionDigits: 0
-							}).format(value);
-				
-							// Set the formatted value back to the input field
-							priceInput.value = formattedValue;
-						} else {
-							priceInput.value = '';
-						}
-					});
-				});
-				</script>
             <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+            <script src="fungsi.js"></script>
   </body>
 </html>
