@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currency Formatter</title>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const priceInput = document.getElementById('price');
+
+    priceInput.addEventListener('input', function () {
+        let value = priceInput.value;
+
+        // Remove non-digit characters
+        value = value.replace(/\D/g, '');
+
+        // Parse as integer
+        value = parseInt(value, 10);
+
+        // If value is a number
+        if (!isNaN(value)) {
+            // Format as Rupiah
+            const formattedValue = new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0
+            }).format(value);
+
+            // Set the formatted value back to the input field
+            priceInput.value = formattedValue;
+        } else {
+            priceInput.value = '';
+        }
+    });
+});
+</script>
+</head>
+<body>
+<div class="col-span-2 sm:col-span-1">
+    <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Harga</label>
+    <input type="text" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Rp. -" required="">
+</div>
+</body>
+</html>
