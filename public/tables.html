@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html :class="{ 'theme-white': white }" x-data="data()" lang="en">
+<html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -122,6 +122,18 @@
               </div>
             </div>
             <ul class="flex items-center flex-shrink-0 space-x-6">
+              <button class="rounded-md focus:outline-none focus:shadow-outline-blue" @click="toggleTheme" aria-label="Toggle color mode">
+                <template x-if="!dark">
+                  <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                  </svg>
+                </template>
+                <template x-if="dark">
+                  <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                  </svg>
+                </template>
+              </button>
               <!-- Profile menu -->
               <li class="relative">
                 <button class="align-middle rounded-full focus:shadow-outline-blue focus:outline-none" @click="toggleProfileMenu" @keydown.escape="closeProfileMenu" aria-label="Account" aria-haspopup="true">
@@ -147,11 +159,10 @@
           <div class="flex items-center my-6 container px-6 mx-auto">
             <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-200"> Daftar Pelanggan </h2>
             <button data-modal-target="create-modal" data-modal-toggle="create-modal" type="button" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-blue-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Add">
-              <svg class="h-6 w-6 ml-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M2.5 5C2.5 4.83424 2.56585 4.67527 2.68306 4.55806C2.80027 4.44085 2.95924 4.375 3.125 4.375H16.875C17.0408 4.375 17.1997 4.44085 17.3169 4.55806C17.4342 4.67527 17.5 4.83424 17.5 5C17.5 5.16576 17.4342 5.32473 17.3169 5.44194C17.1997 5.55915 17.0408 5.625 16.875 5.625H3.125C2.95924 5.625 2.80027 5.55915 2.68306 5.44194C2.56585 5.32473 2.5 5.16576 2.5 5ZM3.125 10.625H16.875C17.0408 10.625 17.1997 10.5592 17.3169 10.4419C17.4342 10.3247 17.5 10.1658 17.5 10C17.5 9.83424 17.4342 9.67527 17.3169 9.55806C17.1997 9.44085 17.0408 9.375 16.875 9.375H3.125C2.95924 9.375 2.80027 9.44085 2.68306 9.55806C2.56585 9.67527 2.5 9.83424 2.5 10C2.5 10.1658 2.56585 10.3247 2.68306 10.4419C2.80027 10.5592 2.95924 10.625 3.125 10.625ZM11.25 14.375H3.125C2.95924 14.375 2.80027 14.4408 2.68306 14.5581C2.56585 14.6753 2.5 14.8342 2.5 15C2.5 15.1658 2.56585 15.3247 2.68306 15.4419C2.80027 15.5592 2.95924 15.625 3.125 15.625H11.25C11.4158 15.625 11.5747 15.5592 11.6919 15.4419C11.8092 15.3247 11.875 15.1658 11.875 15C11.875 14.8342 11.8092 14.6753 11.6919 14.5581C11.5747 14.4408 11.4158 14.375 11.25 14.375ZM18.125 14.375H16.875V13.125C16.875 12.9592 16.8092 12.8003 16.6919 12.6831C16.5747 12.5658 16.4158 12.5 16.25 12.5C16.0842 12.5 15.9253 12.5658 15.8081 12.6831C15.6908 12.8003 15.625 12.9592 15.625 13.125V14.375H14.375C14.2092 14.375 14.0503 14.4408 13.9331 14.5581C13.8158 14.6753 13.75 14.8342 13.75 15C13.75 15.1658 13.8158 15.3247 13.9331 15.4419C14.0503 15.5592 14.2092 15.625 14.375 15.625H15.625V16.875C15.625 17.0408 15.6908 17.1997 15.8081 17.3169C15.9253 17.4342 16.0842 17.5 16.25 17.5C16.4158 17.5 16.5747 17.4342 16.6919 17.3169C16.8092 17.1997 16.875 17.0408 16.875 16.875V15.625H18.125C18.2908 15.625 18.4497 15.5592 18.5669 15.4419C18.6842 15.3247 18.75 15.1658 18.75 15C18.75 14.8342 18.6842 14.6753 18.5669 14.5581C18.4497 14.4408 18.2908 14.375 18.125 14.375Z" fill="black" />
+              <svg class="h-6 w-6 ml-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" :class="{ 'text-black': !dark, 'text-white': dark }">
+                <path d="M2.5 5C2.5 4.83424 2.56585 4.67527 2.68306 4.55806C2.80027 4.44085 2.95924 4.375 3.125 4.375H16.875C17.0408 4.375 17.1997 4.44085 17.3169 4.55806C17.4342 4.67527 17.5 4.83424 17.5 5C17.5 5.16576 17.4342 5.32473 17.3169 5.44194C17.1997 5.55915 17.0408 5.625 16.875 5.625H3.125C2.95924 5.625 2.80027 5.55915 2.68306 5.44194C2.56585 5.32473 2.5 5.16576 2.5 5ZM3.125 10.625H16.875C17.0408 10.625 17.1997 10.5592 17.3169 10.4419C17.4342 10.3247 17.5 10.1658 17.5 10C17.5 9.83424 17.4342 9.67527 17.3169 9.55806C17.1997 9.44085 17.0408 9.375 16.875 9.375H3.125C2.95924 9.375 2.80027 9.44085 2.68306 9.55806C2.56585 9.67527 2.5 9.83424 2.5 10C2.5 10.1658 2.56585 10.3247 2.68306 10.4419C2.80027 10.5592 2.95924 10.625 3.125 10.625ZM11.25 14.375H3.125C2.95924 14.375 2.80027 14.4408 2.68306 14.5581C2.56585 14.6753 2.5 14.8342 2.5 15C2.5 15.1658 2.56585 15.3247 2.68306 15.4419C2.80027 15.5592 2.95924 15.625 3.125 15.625H11.25C11.4158 15.625 11.5747 15.5592 11.6919 15.4419C11.8092 15.3247 11.875 15.1658 11.875 15C11.875 14.8342 11.8092 14.6753 11.6919 14.5581C11.5747 14.4408 11.4158 14.375 11.25 14.375ZM18.125 14.375H16.875V13.125C16.875 12.9592 16.8092 12.8003 16.6919 12.6831C16.5747 12.5658 16.4158 12.5 16.25 12.5C16.0842 12.5 15.9253 12.5658 15.8081 12.6831C15.6908 12.8003 15.625 12.9592 15.625 13.125V14.375H14.375C14.2092 14.375 14.0503 14.4408 13.9331 14.5581C13.8158 14.6753 13.75 14.8342 13.75 15C13.75 15.1658 13.8158 15.3247 13.9331 15.4419C14.0503 15.5592 14.2092 15.625 14.375 15.625H15.625V16.875C15.625 17.0408 15.6908 17.1997 15.8081 17.3169C15.9253 17.4342 16.0842 17.5 16.25 17.5C16.4158 17.5 16.5747 17.4342 16.6919 17.3169C16.8092 17.1997 16.875 17.0408 16.875 16.875V15.625H18.125C18.2908 15.625 18.4497 15.5592 18.5669 15.4419C18.6842 15.3247 18.75 15.1658 18.75 15C18.75 14.8342 18.6842 14.6753 18.5669 14.5581C18.4497 14.4408 18.2908 14.375 18.125 14.375Z" :fill="dark ? 'white' : 'black'" />
               </svg>
             </button>
-          
             <!-- Main modal -->
             <div id="create-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
               <div class="relative p-4 w-full max-w-md max-h-full">
@@ -263,7 +274,7 @@
                                     <div class="col-span-2">
                                       <label for="modTelp" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No. Telepon</label>
                                       <input type="text" name="modTelp" id="modTelp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ketik no telepon" required="">
-                                    </div>                                    
+                                    </div>
                                     <div class="col-span-2">
                                       <label for="modAlamat" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alamat</label>
                                       <input type="text" name="modAlamat" id="modAlamat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="ketik no telepon" required="">
@@ -283,25 +294,25 @@
                             </svg>
                           </button>
                           <div id="popup-modal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-														<div class="relative p-4 w-full max-w-md max-h-full">
-															<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-																<button type="button" class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal">
-																	<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-																		<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-																	</svg>
-																	<span class="sr-only">Close modal</span>
-																</button>
-																<div class="p-4 md:p-5 text-center">
-																	<svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-																		<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-																	</svg>
-																	<h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Apakah anda yakin ingin menghapus?</h3>
-																	<button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center"> Ya, saya yakin </button>
-																	<button data-modal-hide="popup-modal" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Tidak</button>
-																</div>
-															</div>
-														</div>
-													</div>
+                            <div class="relative p-4 w-full max-w-md max-h-full">
+                              <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                <button type="button" class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal">
+                                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                  </svg>
+                                  <span class="sr-only">Close modal</span>
+                                </button>
+                                <div class="p-4 md:p-5 text-center">
+                                  <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                  </svg>
+                                  <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Apakah anda yakin ingin menghapus?</h3>
+                                  <button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center"> Ya, saya yakin </button>
+                                  <button data-modal-hide="popup-modal" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Tidak</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </td>
                     </tr>
@@ -360,38 +371,33 @@
       </main>
       <script>
         document.addEventListener('DOMContentLoaded', function() {
-  const modTelpInput = document.getElementById('modTelp');
+          const modTelpInput = document.getElementById('modTelp');
 
-  function formatPhoneNumber(value) {
-    // Remove all non-digit characters
-    let phoneNumber = value.replace(/\D/g, '');
-    
-    // Format phone number
-    if (phoneNumber.startsWith('62')) {
-      // If it starts with '62', assume it's already in international format
-      phoneNumber = '62 ' + phoneNumber.slice(2);
-    } else if (phoneNumber.startsWith('0')) {
-      // If it starts with '0', replace it with '62'
-      phoneNumber = '62 ' + phoneNumber.slice(1);
-    } else {
-      // Otherwise, assume it's missing the '62' prefix
-      phoneNumber = '62 ' + phoneNumber;
-    }
-    
-    // Add spaces for readability
-    if (phoneNumber.length > 4) {
-      phoneNumber = phoneNumber.slice(0, 2) + ' ' + phoneNumber.slice(2, 6) + ' ' + phoneNumber.slice(6);
-    }
-
-    return phoneNumber;
-  }
-
-  modTelpInput.addEventListener('input', function() {
-    const formattedPhoneNumber = formatPhoneNumber(modTelpInput.value);
-    modTelpInput.value = formattedPhoneNumber;
-  });
-});
-
+          function formatPhoneNumber(value) {
+            // Remove all non-digit characters
+            let phoneNumber = value.replace(/\D/g, '');
+            // Format phone number
+            if (phoneNumber.startsWith('62')) {
+              // If it starts with '62', assume it's already in international format
+              phoneNumber = '62 ' + phoneNumber.slice(2);
+            } else if (phoneNumber.startsWith('0')) {
+              // If it starts with '0', replace it with '62'
+              phoneNumber = '62 ' + phoneNumber.slice(1);
+            } else {
+              // Otherwise, assume it's missing the '62' prefix
+              phoneNumber = '62 ' + phoneNumber;
+            }
+            // Add spaces for readability
+            if (phoneNumber.length > 4) {
+              phoneNumber = phoneNumber.slice(0, 2) + ' ' + phoneNumber.slice(2, 6) + ' ' + phoneNumber.slice(6);
+            }
+            return phoneNumber;
+          }
+          modTelpInput.addEventListener('input', function() {
+            const formattedPhoneNumber = formatPhoneNumber(modTelpInput.value);
+            modTelpInput.value = formattedPhoneNumber;
+          });
+        });
       </script>
   </body>
 </html>
