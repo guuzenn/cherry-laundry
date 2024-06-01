@@ -79,6 +79,41 @@
                     updateStatus(statusEditDropdown, statusCellEdit); // Initial update
                 }
             });
+
+            document.addEventListener('DOMContentLoaded', function() {
+              const modBeratAddInput = document.getElementById('modBeratAdd');
+              const modBeratEditInput = document.getElementById('modBeratEdit');
+          
+              function formatWeight(input) {
+                  let value = input.value.trim(); 
+                  if (value !== '') {
+                      
+                      value = value.replace(/[^\d.]/g, '');
+                      // Convert to number
+                      let weight = parseFloat(value);
+                     
+                      weight = weight.toFixed(2);
+                     
+                      value = weight + ' Kg';
+                  }
+                  input.value = value;
+              }
+          
+              function addWeightInputListener(inputElement) {
+                  inputElement.addEventListener('blur', function() {
+                      formatWeight(inputElement);
+                  });
+              }
+          
+              if (modBeratAddInput) {
+                  addWeightInputListener(modBeratAddInput);
+              }
+          
+              if (modBeratEditInput) {
+                  addWeightInputListener(modBeratEditInput);
+              }
+          });
+          
             
 
             //   document.addEventListener('DOMContentLoaded', function() {
