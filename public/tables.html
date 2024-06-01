@@ -66,38 +66,7 @@
                 <span class="ml-4">Pelanggan</span>
               </a>
             </li>
-            <li class="relative px-6 py-3">
-              <button class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" @click="togglePagesMenu" aria-haspopup="true">
-                <span class="inline-flex items-center">
-                  <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
-                  </svg>
-                  <span class="ml-4">Pages</span>
-                </span>
-                <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                </svg>
-              </button>
-              <template x-if="isPagesMenuOpen">
-                <ul x-transition:enter="transition-all ease-in-out duration-300" x-transition:enter-start="opacity-25 max-h-0" x-transition:enter-end="opacity-100 max-h-xl" x-transition:leave="transition-all ease-in-out duration-300" x-transition:leave-start="opacity-100 max-h-xl" x-transition:leave-end="opacity-0 max-h-0" class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900" aria-label="submenu">
-                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                    <a class="w-full" href="pages/login.html">Login</a>
-                  </li>
-                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                    <a class="w-full" href="pages/create-account.html"> Create account </a>
-                  </li>
-                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                    <a class="w-full" href="pages/forgot-password.html"> Forgot password </a>
-                  </li>
-                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                    <a class="w-full" href="pages/404.html">404</a>
-                  </li>
-                  <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                    <a class="w-full" href="pages/blank.html">Blank</a>
-                  </li>
-                </ul>
-              </template>
-            </li>
+            
           </ul>
         </div>
       </aside>
@@ -182,20 +151,20 @@
                   <form class="p-4 md:p-5">
                     <div class="grid gap-4 mb-4 grid-cols-2">
                       <div class="col-span-2">
-                        <label for="modPelanggan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ID Pelanggan</label>
-                        <input type="text" name="modPelanggan" id="modPelanggan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ketik id pelanggan" required="">
+                        <label for="modPelangganAdd" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ID Pelanggan</label>
+                        <input type="text" name="modPelangganAdd" id="modPelangganAdd" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:text-gray-400 dark:text-white" placeholder="Ketik id pelanggan" required="">
                       </div>
                       <div class="col-span-2">
-                        <label for="modNama" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama</label>
-                        <input type="text" name="modNama" id="modNama" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ketik nama pelanggan" required="">
+                        <label for="modNamaAdd" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama</label>
+                        <input type="text" name="modNamaAdd" id="modNamaAdd" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:text-gray-400 dark:text-white" placeholder="Ketik nama pelanggan" required="">
                       </div>
                       <div class="col-span-2">
-                        <label for="modTelp" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No. Telepon</label>
-                        <input type="text" name="modTelp" id="modTelp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ketik no telepon" required="">
+                        <label for="modTelpAdd" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No. Telepon</label>
+                        <input type="text" name="modTelpAdd" id="modTelpAdd" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:text-gray-400 dark:text-white" placeholder="Ketik no telepon" required="">
                       </div>
                       <div class="col-span-2">
-                        <label for="modAlamat" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alamat</label>
-                        <input type="text" name="modAlamat" id="modAlamat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ketik alamat" required="">
+                        <label for="modAlamatAdd" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alamat</label>
+                        <input type="text" name="modAlamatAdd" id="modAlamatAdd" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:text-gray-400 dark:text-white" placeholder="Ketik alamat" required="">
                       </div>
                     </div>
                     <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
@@ -264,20 +233,20 @@
                                 <form class="p-4 md:p-5">
                                   <div class="grid gap-4 mb-4 grid-cols-2">
                                     <div class="col-span-2">
-                                      <label for="modPelanggan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ID Pelanggan</label>
-                                      <input type="text" name="modPelanggan" id="modPelanggan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ketik id pelanggan" required="">
+                                      <label for="modPelangganEdit" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ID Pelanggan</label>
+                                      <input type="text" name="modPelangganEdit" id="modPelangganEdit" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:text-gray-400 dark:text-white" placeholder="Ketik id pelanggan" required="">
                                     </div>
                                     <div class="col-span-2">
-                                      <label for="modNama" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama</label>
-                                      <input type="text" name="modNama" id="modNama" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ketik nama pelanggan" required="">
+                                      <label for="modNamaEdit" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama</label>
+                                      <input type="text" name="modNamaEdit" id="modNamaEdit" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:text-gray-400 dark:text-white" placeholder="Ketik nama pelanggan" required="">
                                     </div>
                                     <div class="col-span-2">
-                                      <label for="modTelp" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No. Telepon</label>
-                                      <input type="text" name="modTelp" id="modTelp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ketik no telepon" required="">
+                                      <label for="modTelpEdit" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No. Telepon</label>
+                                      <input type="text" name="modTelpEdit" id="modTelpEdit" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:text-gray-400 dark:text-white" placeholder="Ketik no telepon" required="">
                                     </div>
                                     <div class="col-span-2">
-                                      <label for="modAlamat" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alamat</label>
-                                      <input type="text" name="modAlamat" id="modAlamat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="ketik no telepon" required="">
+                                      <label for="modAlamatEdit" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alamat</label>
+                                      <input type="text" name="modAlamatEdit" id="modAlamatEdit" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:text-gray-400 dark:text-white" placeholder="ketik no telepon" required="">
                                     </div>
                                   </div>
                                   <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
@@ -369,35 +338,8 @@
           </div>
       </div>
       </main>
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const modTelpInput = document.getElementById('modTelp');
-
-          function formatPhoneNumber(value) {
-            // Remove all non-digit characters
-            let phoneNumber = value.replace(/\D/g, '');
-            // Format phone number
-            if (phoneNumber.startsWith('62')) {
-              // If it starts with '62', assume it's already in international format
-              phoneNumber = '62 ' + phoneNumber.slice(2);
-            } else if (phoneNumber.startsWith('0')) {
-              // If it starts with '0', replace it with '62'
-              phoneNumber = '62 ' + phoneNumber.slice(1);
-            } else {
-              // Otherwise, assume it's missing the '62' prefix
-              phoneNumber = '62 ' + phoneNumber;
-            }
-            // Add spaces for readability
-            if (phoneNumber.length > 4) {
-              phoneNumber = phoneNumber.slice(0, 2) + ' ' + phoneNumber.slice(2, 6) + ' ' + phoneNumber.slice(6);
-            }
-            return phoneNumber;
-          }
-          modTelpInput.addEventListener('input', function() {
-            const formattedPhoneNumber = formatPhoneNumber(modTelpInput.value);
-            modTelpInput.value = formattedPhoneNumber;
-          });
-        });
+      <script src="/public/assets/js/fungsi.js">
+        
       </script>
   </body>
 </html>
