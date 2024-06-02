@@ -52,11 +52,47 @@ function data() {
     trapCleanup: null,
     openModal() {
       this.isModalOpen = true
-      this.trapCleanup = focusTrap(document.querySelector('#modal'))
     },
     closeModal() {
       this.isModalOpen = false
-      this.trapCleanup()
+    },
+
+    addCustomer(e) {
+      e.preventDefault()
+
+      dataJson = JSON.stringify({
+        name: document.getElementById('modNamaAdd').value,
+        phone: document.getElementById('modTelpAdd').value,
+        address: document.getElementById('modAlamatAdd').value,
+      })
+      fetch('https://api.cherrylaundry.h14.my.id/customers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: dataJson,
+      }).then((response) => {
+        if (response.ok) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Berhasil',
+            text: 'Data berhasil ditambahkan',
+            showConfirmButton: false,
+            timer: 1500,
+          })
+          e.target.reset()
+          this.closeModal()
+          location.reload()
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Gagal',
+            text: 'Data gagal ditambahkan',
+            showConfirmButton: false,
+            timer: 1500,
+          })
+        }
+      })
     },
   }
 }
