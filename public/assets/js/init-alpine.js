@@ -24,6 +24,7 @@ function data() {
     },
     isSideMenuOpen: false,
     toggleSideMenu() {
+      console.log(this.isSideMenuOpen)
       this.isSideMenuOpen = !this.isSideMenuOpen
     },
     closeSideMenu() {
@@ -36,13 +37,7 @@ function data() {
     closeNotificationsMenu() {
       this.isNotificationsMenuOpen = false
     },
-    isProfileMenuOpen: false,
-    toggleProfileMenu() {
-      this.isProfileMenuOpen = !this.isProfileMenuOpen
-    },
-    closeProfileMenu() {
-      this.isProfileMenuOpen = false
-    },
+
     isPagesMenuOpen: false,
     togglePagesMenu() {
       this.isPagesMenuOpen = !this.isPagesMenuOpen
@@ -65,7 +60,7 @@ function data() {
         phone: document.getElementById('modTelpAdd').value,
         address: document.getElementById('modAlamatAdd').value,
       })
-      fetch('https://api.cherrylaundry.h14.my.id/customers', {
+      fetch('http://localhost:3000/customers', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

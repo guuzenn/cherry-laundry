@@ -851,9 +851,7 @@
           async init() {
             console.log('refetch')
             try {
-              const response = await fetch(
-                'https://api.cherrylaundry.h14.my.id/customers'
-              )
+              const response = await fetch('http://localhost:3000/customers')
               const data = await response.json()
               this.data = data
             } catch (error) {
@@ -910,8 +908,7 @@
                 e.preventDefault()
                 dataJson = JSON.stringify(this.modal.edit.data)
                 fetch(
-                  'https://api.cherrylaundry.h14.my.id/customers/' +
-                    this.modal.edit.data.id,
+                  'http://localhost:3000/customers/' + this.modal.edit.data.id,
                   {
                     method: 'PUT',
                     headers: {
@@ -959,8 +956,7 @@
                 e.preventDefault()
                 if (this.modal.delete.id) {
                   fetch(
-                    'https://api.cherrylaundry.h14.my.id/customers/' +
-                      this.modal.delete.id,
+                    'http://localhost:3000/customers/' + this.modal.delete.id,
                     {
                       method: 'DELETE',
                     }
