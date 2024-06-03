@@ -1183,7 +1183,7 @@
         window.localStorage.setItem('dark', value)
       }
       document.addEventListener('alpine:init', () => {
-        const BASE_URL = 'http://localhost:3000'
+        const BASE_URL = 'https://api.cherrylaundry.h14.my.id'
         Alpine.data('root', () => ({
           dark: getThemeFromLocalStorage(),
           toggleTheme() {
@@ -1287,7 +1287,7 @@
                   timer: 1500,
                 })
                 this.modal.delete.isOpen = false
-                 this.init()
+                 
               })
           },
           confirmUpdate(e) {
@@ -1308,6 +1308,7 @@
                 timer: 1500,
               })
               this.modal.edit.isOpen = false
+              this.init()
               // location.reload()
             }).catch(()=> {
               Swal.fire({

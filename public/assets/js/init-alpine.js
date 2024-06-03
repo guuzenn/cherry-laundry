@@ -24,7 +24,6 @@ function data() {
     },
     isSideMenuOpen: false,
     toggleSideMenu() {
-      console.log(this.isSideMenuOpen)
       this.isSideMenuOpen = !this.isSideMenuOpen
     },
     closeSideMenu() {
@@ -60,7 +59,7 @@ function data() {
         phone: document.getElementById('modTelpAdd').value,
         address: document.getElementById('modAlamatAdd').value,
       })
-      fetch('http://localhost:3000/customers', {
+      fetch('https://api.cherrylaundry.h14.my.id/customers', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
