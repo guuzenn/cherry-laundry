@@ -326,13 +326,13 @@
                         <select
                           id="idPelangganAdd"
                           x-model="addTransactionData.customer_id"
-                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-400 dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-black-400 dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                           required
                         >
                           <option
                             selected
                             disabled
-                            class="text-gray-500 dark:text-gray-400"
+                            class="text-gray-500 dark:text-black-400"
                             value=""
                           >
                             Pilih ID
@@ -340,7 +340,7 @@
                           <template x-for="customer in customers.reverse()">
                             <option
                               :value="customer.id"
-                              class="text-gray-500 dark:text-gray-400"
+                              class="text-gray-500 dark:text-black-400"
                               x-text="`${customer.id} - ${customer.name}`"
                             ></option>
                           </template>
@@ -358,7 +358,7 @@
                           type="number"
                           name="priceAdd"
                           id="priceAdd"
-                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-400 dark:text-white dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-black-400 dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                           placeholder="Rp. -"
                           required
                           x-model="addTransactionData.total_amount"
@@ -373,31 +373,31 @@
                         </label>
                         <select
                           id="statusAdd"
-                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-400 dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-black-400 dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                           x-model="addTransactionData.status"
                         >
                           <option
                             selected
                             disabled
-                            class="text-gray-500 dark:text-gray-400"
+                            class="text-gray-500 dark:text-black-400"
                           >
                             Pilih Status
                           </option>
                           <option
                             value="diproses"
-                            class="text-gray-900 dark:text-gray-400"
+                            class="text-gray-900 dark:text-black-400"
                           >
                             DIPROSES
                           </option>
                           <option
                             value="selesai"
-                            class="text-gray-900 dark:text-gray-400"
+                            class="text-gray-900 dark:text-black-400"
                           >
                             SELESAI
                           </option>
                           <option
                             value="belum diambil"
-                            class="text-gray-900 dark:text-gray-400"
+                            class="text-gray-900 dark:text-black-400"
                           >
                             BELUM DIAMBIL
                           </option>
@@ -416,7 +416,7 @@
                           type="text"
                           name="modBeratAdd"
                           id="modBeratAdd"
-                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:text-gray-400 dark:text-white"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:text-black-400"
                           placeholder="Ketik berat (Kg)"
                           required=""
                         />
@@ -432,7 +432,7 @@
                           type="date"
                           name="modTanggalAdd"
                           id="modTanggalAdd"
-                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:text-gray-400 dark:text-white"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:text-black-400"
                           placeholder="DD/MM/YY"
                           required=""
                           x-model="addTransactionData.entry_date"
@@ -449,7 +449,7 @@
                           type="date"
                           name="tanggalKeluar"
                           id="tanggalKeluar"
-                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:text-gray-400 dark:text-white"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:text-black-400"
                           placeholder="DD/MM/YY"
                           x-model="addTransactionData.payment_date"
                         />
@@ -850,18 +850,18 @@
                       </label>
                       <select
                         id="idPelangganEdit"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-400 dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-black-400 dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                       >
                         <option
                           selected
                           disabled
-                          class="text-gray-500 dark:text-gray-400"
+                          class="text-gray-500 dark:text-black-400"
                         >
                           Pilih ID
                         </option>
                         <option
                           value="1"
-                          class="text-gray-500 dark:text-gray-400"
+                          class="text-gray-500 dark:text-black-400"
                         >
                           P001
                         </option>
@@ -882,7 +882,7 @@
                         type="number"
                         name="priceEdit"
                         id="priceEdit"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-400 dark:text-white dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-black-400 dark:text-white dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                         placeholder="Rp. -"
                         required
                       />
@@ -896,30 +896,30 @@
                       </label>
                       <select
                         id="statusEdit"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-400 dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:text-black-400 dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                       >
                         <option
                           selected
                           disabled
-                          class="text-gray-500 dark:text-gray-400"
+                          class="text-gray-500 dark:text-black-400"
                         >
                           Pilih Status
                         </option>
                         <option
                           value="PR"
-                          class="text-gray-900 dark:text-gray-400"
+                          class="text-gray-900 dark:text-black-400"
                         >
                           Proses
                         </option>
                         <option
                           value="SL"
-                          class="text-gray-900 dark:text-gray-400"
+                          class="text-gray-900 dark:text-black-400"
                         >
                           Selesai
                         </option>
                         <option
                           value="BD"
-                          class="text-gray-900 dark:text-gray-400"
+                          class="text-gray-900 dark:text-black-400"
                         >
                           Belum diambil
                         </option>
@@ -937,7 +937,7 @@
                         type="text"
                         name="modBeratEdit"
                         id="modBeratEdit"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:text-gray-400 dark:text-white"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:text-black-400"
                         placeholder="Ketik berat (Kg)"
                         required=""
                       />
@@ -953,7 +953,7 @@
                         type="date"
                         name="modTanggalEdit"
                         id="modTanggalEdit"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:text-gray-400 dark:text-white"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:text-black-400"
                         placeholder="DD/MM/YY"
                         required=""
                       />
